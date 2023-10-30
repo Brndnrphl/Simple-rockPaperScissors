@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const moves = ['rock', 'paper', 'scissors']
+    const moves = ['rock', 'paper', 'scissors'];
 
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
             let j = Math.floor(Math.random() * (i + 1))
-            let temp = array[i]
-            array[i] = array[j]
-            array[j] = temp
+            let temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
         }
     }
 
@@ -27,12 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function handleUserSelection(selection) {
         let index = moves.indexOf(selection);
         let userPick = moves[index];
-        console.log("User selected: " + userPick);
-
-        // Calculate computer's move
         let computerPickIndex = Math.floor(Math.random() * moves.length);
         let computerPick = moves[computerPickIndex];
-        // console.log("Computer selected: " + computerPick);
+
         if (userPick === computerPick) {
             console.log("Tie!");
             document.getElementById("ties").innerText = parseInt(document.getElementById("ties").innerText) + 1;
